@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Upcoming Songs{% endblock %}
+
+{% block content %}
+<h2>Upcoming Songs</h2>
+
+<ul>
+    {% for song in songs %}
+    <li><a href="{% url 'songs:detail' pk=song.pk %}">{{ song }}</a> performed by <a href="{% url 'songs:performer' pk=song.performer.pk %}">{{ song.performer }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

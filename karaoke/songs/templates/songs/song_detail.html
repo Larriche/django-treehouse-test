@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ song.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ song.title }}</h2>
+
+<p>By {{ song.artist }}</p>
+<p>Sung by <a href="{% url 'songs:performer' pk=song.performer.pk %}">{{ song.performer }}</a></p>
+{% endblock %}

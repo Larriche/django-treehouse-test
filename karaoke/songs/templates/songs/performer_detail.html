@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ performer }}{% endblock %}
+
+{% block content %}
+<h2>{{ performer }}</h2>
+<ul>
+ {% for song in performer.song_set.all %}
+ <li>{{ song }}</li>
+ {% endfor %}
+ </ul>
+{% endblock %}
